@@ -37,7 +37,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Notify PR creation
-        run: echo "PR Opened"
+        run: |
+          echo "PR Opened"
+          sleep 100
         
       #- name: Run a one-line script
         #run: python app.py
