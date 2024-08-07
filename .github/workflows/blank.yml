@@ -30,7 +30,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ls
+        run: python app.py
   job2:
     runs-on: ubuntu-latest
     needs: job1
