@@ -10,7 +10,7 @@ on:
     #- cron: '10 9 * * *'
   #push:
      #branches:
-       - main
+       #- main
      #types:
       # - opened
     # Allows you to run this workflow manually from the Actions tab
