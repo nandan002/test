@@ -55,6 +55,10 @@ jobs:
         with:
           name: test-results
           path: test-results/
+
+      # Run python code
+      - name: Running the application
+        run: python src/test.py
         
 
       
