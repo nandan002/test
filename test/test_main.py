@@ -1,5 +1,5 @@
 import unittest
-from src.main import add
+from src.test import add
 class TestMain(unittest.TestCase):
   def test_add(self):
     self.assert.Equal(add(1,2),3)
