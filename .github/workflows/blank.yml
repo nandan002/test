@@ -61,7 +61,7 @@ jobs:
         name: Running the application
         run: |
           python src/test.py > script_output.txt
-          echo "script_output=$(script_output.txt)" >> $GITHUB_OUTPUT
+          echo "script_output=$(<script_output.txt)" >> $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu:latest
     needs: job1
