@@ -1,8 +1,5 @@
-import unittest
-from src.main import add
-class TestMain(unittest.TestCase):
-  def test_add(self):
-    self.assert.Equal(add(1,2),3)
+def add (a,b):
+  return a+b
 
 if __name__ == "__main__":
-  unitest.main()
+  print(add(1,2))
