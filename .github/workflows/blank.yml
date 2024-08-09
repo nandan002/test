@@ -74,7 +74,7 @@ jobs:
  
         uses: peter-evans/repository-dispatch@v3 
         with:
-          token: ${{ secrets.repo_access_token }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: nandan002/CD
           event-type: my-event
         
