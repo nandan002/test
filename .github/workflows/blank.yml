@@ -30,7 +30,8 @@ jobs:
   job1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+      REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -74,7 +75,7 @@ jobs:
  
         uses: peter-evans/repository-dispatch@v3 
         with:
-          #token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          token: ${{ env.REPO_ACCESS_TOKEN }}
           repository: nandan002/CD
           event-type: my-event
         
