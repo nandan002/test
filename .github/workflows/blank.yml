@@ -68,6 +68,15 @@ jobs:
       - id: output
         name: Running the application
         run: python src/test.py
+
+      # Call CD Pipeline
+      - name: trigeer automated test repo
+ 
+        uses: peter-evans/repository-dispatch@v3 
+        with:
+          token: ${{ secrets.repo_access_token }}
+          repository: nandan002/CD
+          event-type: my-event
         
     
     
