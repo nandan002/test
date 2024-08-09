@@ -72,7 +72,7 @@ jobs:
       - name: Trigger CD Pipeline
         uses: peter-evans/repository-dispatch@v3 
         with:
-          token: ${{ secrets.repo }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: nandan002/CD
           event-type: my-event
         
