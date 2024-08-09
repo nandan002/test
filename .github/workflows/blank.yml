@@ -70,7 +70,7 @@ jobs:
         run: python src/test.py
 
       # Call CD Pipeline
-      - name: trigeer automated test repo
+      - name: Trigger CD Pipeline
  
         uses: peter-evans/repository-dispatch@v3 
         with:
