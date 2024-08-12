@@ -19,9 +19,9 @@ on:
   
   #pull_request:
     #branches: [ "main" ]
-#concurrency:
-  #group: ${{github.ref}}
-  #cancel-in-progress: true
+concurrency:
+  group: ${{github.ref}}
+  cancel-in-progress: true
   
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -42,7 +42,7 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     needs: job1
-    if: failure()
+    if: always()
 
     steps:
       - name: On Failure running
