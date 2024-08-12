@@ -36,6 +36,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Display Something
+        run: echo "JOB 1 done"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    if: failure()
+
+    steps:
+      - name: On Failure running
+        run: echo " JOB1 Failed "
+
       # Caching
       #- name: Cache pip dependencies
        # uses: actions/cache@v3
@@ -69,12 +81,12 @@ jobs:
         #run: python src/test.py
         
       # Call CD Pipeline
-      - name: Trigger CD Pipeline
-        uses: peter-evans/repository-dispatch@v3 
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: nandan002/CD
-          event-type: my-event
+      #- name: Trigger CD Pipeline
+       # uses: peter-evans/repository-dispatch@v3 
+        #with:
+         # token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          #repository: nandan002/CD
+          #event-type: my-event
         
     
     
